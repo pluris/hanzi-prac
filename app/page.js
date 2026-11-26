@@ -21,7 +21,7 @@ export default function Home(){
  const saveWrong=(v)=>{setWrong(v);localStorage.setItem('hq-wrong',JSON.stringify(v))};
  const playSound=(kind='tap')=>{if(!soundEnabled||typeof window==='undefined')return;try{const AudioCtx=window.AudioContext||window.webkitAudioContext;if(!AudioCtx)return;const ctx=audioRef.current||(audioRef.current=new AudioCtx());if(ctx.state==='suspended')ctx.resume();const patterns={tap:[[520,.055,'sine']],correct:[[660,.11,'sine'],[880,.12,'sine'],[1175,.18,'sine']],wrong:[[260,.16,'triangle'],[190,.22,'triangle']],complete:[[523,.13,'sine'],[659,.13,'sine'],[784,.13,'sine'],[1047,.3,'sine']],pass:[[659,.12,'sine'],[784,.12,'sine'],[988,.12,'sine'],[1319,.35,'sine']],fail:[[392,.16,'triangle'],[330,.18,'triangle'],[262,.3,'triangle']]};let t=ctx.currentTime+.015;(patterns[kind]||patterns.tap).forEach(([freq,dur,wave])=>{const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type=wave;osc.frequency.setValueAtTime(freq,t);gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.12,t+.015);gain.gain.exponentialRampToValueAtTime(.0001,t+dur);osc.connect(gain);gain.connect(ctx.destination);osc.start(t);osc.stop(t+dur+.02);t+=dur*.78})}catch{}};
  const speakPika=()=>{};
- const speakPikaMenu=()=>{};
+ const speakPikaMenu=()=>{if(!soundEnabled||typeof window==='undefined')return;try{const a=new Audio('/audio/pikachu-menu.mp3');a.volume=.85;a.play().catch(()=>{})}catch{}};
  const list=useMemo(()=>grade==='전체'?data:data.filter(x=>x.grade===grade),[grade]);
  const start=(n=10,source=data,exam=false)=>{setQuiz(shuffle(source).slice(0,n));setQi(0);setScore(0);setAnswer(null);setResponses([]);setIsExam(exam);setTab('quiz')};
  const current=quiz[qi];
