@@ -47,3 +47,5 @@ button:focus-visible{outline:3px solid #382b24;outline-offset:3px}
 @keyframes medal-bounce{0%{opacity:0;transform:translateY(-20px) scale(.5) rotate(-15deg)}65%{opacity:1;transform:translateY(4px) scale(1.15) rotate(8deg)}100%{transform:translateY(0) scale(1) rotate(0)}}
 @keyframes score-count-in{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+.quiz-navigation{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 18px;color:#8a7769;font-size:14px;font-weight:800}.quiz-navigation .quiz-home{padding:10px 15px;border-radius:12px;background:#fff;color:#8b563b;border:1px solid #ead9ca;font-size:14px;box-shadow:0 2px 6px #78543710}.quiz-navigation .quiz-home:active{transform:scale(.97)}footer button{min-height:44px}
