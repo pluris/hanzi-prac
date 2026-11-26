@@ -3,7 +3,7 @@
 ## Vercel 배포
 1. 이 폴더를 GitHub 저장소에 업로드합니다.
 2. Vercel에서 Add New → Project → 해당 저장소 Import를 선택합니다.
-3. Framework Preset은 Next.js, Build Command는 `npm run build`, Output Directory는 `out`으로 둡니다.
+3. Framework Preset은 Next.js, Build Command는 `npm run build`로 둡니다. Output Directory는 비워 둡니다.
 4. Deploy를 누릅니다.
 
 ## 로컬 실행
