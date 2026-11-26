@@ -6,7 +6,7 @@
 
 
 /* Polished motion system */
-.app-shell{animation:screen-arrive .42s cubic-bezier(.2,.75,.25,1) both;isolation:isolate}
+.app-shell{isolation:isolate}
 .app-shell:before{content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;opacity:.34;background:radial-gradient(circle at 8% 18%,#ffe2c7 0 2px,transparent 3px),radial-gradient(circle at 88% 28%,#f7d8a8 0 3px,transparent 4px),radial-gradient(circle at 76% 82%,#f5dfc9 0 2px,transparent 3px);background-size:180px 180px,230px 230px,150px 150px;animation:ambient-drift 18s linear infinite}
 .hero{position:relative;overflow:hidden;animation:hero-enter .65s cubic-bezier(.2,.8,.2,1) both}
 .hero:after{content:"✦  ✧  ✦";position:absolute;right:18px;top:12px;color:#d99b65;letter-spacing:18px;font-size:18px;animation:sparkle 3s ease-in-out infinite}
