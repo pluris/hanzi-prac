@@ -1,6 +1,5 @@
 'use client';
 import {useEffect,useMemo,useRef,useState} from 'react';
-import {pikachuAudioBase64} from './pikachu-audio';
 const groups = [
 ['8급',`九 金 南 男 女 東 六 母 木 門 父 北 四 三 西 水 十 五 月 二 人 日 一 子 弟 七 土 八 兄 火`],
 ['7급',`江 口 內 年 大 目 白 山 上 小 手 外 右 入 足 左 中 靑 出 下`],
@@ -21,7 +20,7 @@ export default function Home(){
  const tabHistory=useRef(['home']);
  const clearingToHome=useRef(false);
  const setTab=(nextTab)=>{if(nextTab==='home'){const backSteps=Math.max(0,tabHistory.current.length-1);tabHistory.current=['home'];setTabState('home');if(backSteps>0){clearingToHome.current=true;window.history.go(-backSteps);}else{window.history.replaceState({hanziTab:'home'},'','#home');}return;}if(nextTab===tabHistory.current[tabHistory.current.length-1])return;tabHistory.current.push(nextTab);window.history.pushState({hanziTab:nextTab},'','#'+nextTab);setTabState(nextTab)};
- const [confirmReset,setConfirmReset]=useState(false),[grade,setGrade]=useState('전체'),[idx,setIdx]=useState(0),[quiz,setQuiz]=useState([]),[qi,setQi]=useState(0),[score,setScore]=useState(0),[wrong,setWrong]=useState([]),[done,setDone]=useState(0),[answer,setAnswer]=useState(null),[isExam,setIsExam]=useState(false),[responses,setResponses]=useState([]),[examHistory,setExamHistory]=useState([]),[confirmExamReset,setConfirmExamReset]=useState(false),[soundEnabled,setSoundEnabled]=useState(true),[dailyQuiz,setDailyQuiz]=useState([]),[dailyRevealed,setDailyRevealed]=useState(false); const audioRef=useRef(null); const menuAudioRef=useRef(null);
+ const [confirmReset,setConfirmReset]=useState(false),[grade,setGrade]=useState('전체'),[idx,setIdx]=useState(0),[quiz,setQuiz]=useState([]),[qi,setQi]=useState(0),[score,setScore]=useState(0),[wrong,setWrong]=useState([]),[done,setDone]=useState(0),[answer,setAnswer]=useState(null),[isExam,setIsExam]=useState(false),[responses,setResponses]=useState([]),[examHistory,setExamHistory]=useState([]),[confirmExamReset,setConfirmExamReset]=useState(false),[soundEnabled,setSoundEnabled]=useState(true),[dailyQuiz,setDailyQuiz]=useState([]),[dailyRevealed,setDailyRevealed]=useState(false);
  useEffect(()=>{window.history.replaceState({hanziTab:'home'},'','#home');const onPopState=()=>{if(clearingToHome.current){clearingToHome.current=false;tabHistory.current=['home'];setTabState('home');window.history.replaceState({hanziTab:'home'},'','#home');return;}if(tabHistory.current.length>1){tabHistory.current.pop();setTabState(tabHistory.current[tabHistory.current.length-1]);}else{tabHistory.current=['home'];setTabState('home');}};window.addEventListener('popstate',onPopState);return()=>window.removeEventListener('popstate',onPopState)},[]);
  useEffect(()=>{try{setWrong(JSON.parse(localStorage.getItem('hq-wrong')||'[]'));setDone(+localStorage.getItem('hq-done')||0);setExamHistory(JSON.parse(localStorage.getItem('hq-exams')||'[]'));setSoundEnabled(localStorage.getItem('hq-sound')!=='off')}catch{}},[]);
  const saveWrong=(v)=>{setWrong(v);localStorage.setItem('hq-wrong',JSON.stringify(v))};
