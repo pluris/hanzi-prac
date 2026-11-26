@@ -100,3 +100,7 @@ button:focus-visible{outline:3px solid #382b24;outline-offset:3px}
 /* Keep the home menu at its original height; place the mascot beside the heading. */
 .menu-stage{margin-top:18px}.hero{justify-content:space-between;gap:12px}.hero-pikachu-button{position:relative!important;left:auto!important;top:auto!important;flex:0 0 88px;width:88px;height:88px;margin:0 -4px 0 0;animation:pika-idle 4.8s ease-in-out infinite}.hero-title-badge{position:static;transform:none;margin-top:8px}
 @media(max-width:520px){.menu-stage{margin-top:18px}.hero-pikachu-button{flex-basis:76px;width:76px;height:76px;left:auto!important;top:auto!important}.hero{gap:8px;padding:18px}.hero-title-badge{font-size:11px;right:auto;padding:5px 8px}}
+
+/* Keep the hero sprite fully visible and lower it slightly while centered. */
+.hero{overflow:visible}.hero-pikachu-button{align-self:center;margin:12px -4px 0 0!important}
+@media(max-width:520px){.hero-pikachu-button{margin:8px -4px 0 0!important}}
