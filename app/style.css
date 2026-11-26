@@ -104,3 +104,7 @@ button:focus-visible{outline:3px solid #382b24;outline-offset:3px}
 /* Keep the hero sprite fully visible and lower it slightly while centered. */
 .hero{overflow:visible}.hero-pikachu-button{align-self:center;margin:12px -4px 0 0!important}
 @media(max-width:520px){.hero-pikachu-button{margin:8px -4px 0 0!important}}
+
+/* Compact home hero: keep the title and equipped title badge together. */
+.hero{padding-bottom:12px;margin-bottom:0}.hero-copy{min-width:0;flex:1}.hero-heading-row{display:flex;align-items:center;flex-wrap:wrap;gap:8px}.hero-heading-row h1{margin:0;font-size:26px}.hero-copy>p{margin:7px 0 0}.hero-title-badge{display:inline-flex;position:static;transform:none;margin:0;white-space:nowrap;flex:0 0 auto}.stats{margin-top:8px}
+@media(max-width:520px){.hero{padding:14px 14px 10px}.hero-heading-row{gap:6px}.hero-heading-row h1{font-size:19px}.hero-title-badge{font-size:10px;padding:4px 7px}.stats{margin-top:6px}}
