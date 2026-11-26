@@ -74,3 +74,12 @@ button:focus-visible{outline:3px solid #382b24;outline-offset:3px}
 .answer-feedback{gap:8px}
 @keyframes pika-pop{0%{opacity:0;transform:scale(.55) translateY(9px)}70%{opacity:1;transform:scale(1.12) translateY(-3px)}100%{transform:scale(1) translateY(0)}}
 @media(max-width:520px){.pikachu-mascot{width:82px;height:82px}}
+
+/* Real game sprite peeking over the home menu */
+.pikachu-mascot,.pikachu-feedback{object-fit:contain;image-rendering:pixelated}
+.menu-stage{position:relative;margin-top:76px}
+.menu-pikachu{position:absolute;z-index:0;width:116px;height:116px;object-fit:contain;right:26px;top:-84px;image-rendering:pixelated;filter:drop-shadow(0 4px 2px #6b4b1c30);animation:pika-peek .85s cubic-bezier(.2,.8,.2,1) both,pika-idle 2.4s 0.85s ease-in-out infinite;pointer-events:none}
+.menu-stage .tiles{position:relative;z-index:1}
+@keyframes pika-peek{0%{opacity:0;transform:translateY(42px) scale(.72)}65%{opacity:1;transform:translateY(-7px) scale(1.06)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes pika-idle{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
+@media(max-width:520px){.menu-stage{margin-top:68px}.menu-pikachu{width:100px;height:100px;top:-74px;right:14px}}
