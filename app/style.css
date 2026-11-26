@@ -88,3 +88,5 @@ button:focus-visible{outline:3px solid #382b24;outline-offset:3px}
 @media(max-width:520px){.menu-stage{margin-top:76px}.menu-pikachu-button{width:104px;height:104px;left:calc(25% - 52px);top:-78px}}
 
 .dictionary-navigation{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.dictionary-navigation h2{margin:0}.dictionary-home{flex:0 0 auto;padding:9px 14px;border-radius:12px;font-weight:700}
+
+.daily-flip-card+.actions{justify-content:flex-end;margin-top:18px}.daily-flip-card+.actions button{min-width:132px}
