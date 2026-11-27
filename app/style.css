@@ -113,3 +113,5 @@ button:focus-visible{outline:3px solid #382b24;outline-offset:3px}
 .question .question-sentence{font-size:22px;line-height:1.8;font-weight:750;letter-spacing:-.3px;margin:14px auto;max-width:680px;word-break:keep-all;overflow-wrap:anywhere}
 .question .question-sentence u{text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:#c76d42;font-weight:900}
 @media(max-width:520px){.question .question-sentence{font-size:18px;line-height:1.75;padding:0 4px}}
+
+.stroke-options-note{text-align:center;color:#8a7769;font-size:14px;margin:10px 0 18px}
