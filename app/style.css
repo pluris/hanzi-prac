@@ -115,3 +115,5 @@ button:focus-visible{outline:3px solid #382b24;outline-offset:3px}
 @media(max-width:520px){.question .question-sentence{font-size:18px;line-height:1.75;padding:0 4px}}
 
 .stroke-options-note{text-align:center;color:#8a7769;font-size:14px;margin:10px 0 18px}
+
+.hero-title-badge{position:static!important;transform:none!important;display:inline-flex;align-items:center;gap:4px;margin:0!important;white-space:nowrap;max-width:100%;font-size:12px}.hero-title-badge.reward-flower{background:#fff0f5;color:#a64d70}.hero-title-badge.reward-spark{background:#f4edff;color:#7549a5}.hero-title-badge.reward-crown{background:#fff0c4;color:#80531d}.owned-rewards .active-reward{outline:2px solid #d98655;background:#fff3e8}.reward-current-status{font-size:13px;font-weight:800;color:#a65d35;margin-top:10px}
